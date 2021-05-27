@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import styled from "styled-components";
 
 const priority = [
@@ -9,12 +9,10 @@ const priority = [
 
 const InputForm = ({inputText, setInputText, add, setSelectPriority, selectPriority}) => {
 
-     
-
     return (
         <>
         <StyledInputForm>
-            <p>やること</p>
+            <p>タスク</p>
             <div>
                 <input 
                     value={inputText} 

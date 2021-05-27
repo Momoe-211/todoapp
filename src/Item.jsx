@@ -2,11 +2,16 @@ import React, {useState} from "react";
 // import styles from "../styles/item.modele.css";
 import styled from "styled-components";
 
-const Item = ({props, todo, id, deleteTodo, isDone, setIsDone}) => {
+const Item = ({todo, id, deleteTodo}) => {
     
+    const [isDone, setIsDone] = useState(false);
 
     const handleDelete = () => {
-        deleteTodo(id, isDone);
+        if (isDone === false) {
+            alert("タスクが完了していません");
+        } else {
+            deleteTodo(id);
+        }
     }
 
     return (
@@ -17,9 +22,7 @@ const Item = ({props, todo, id, deleteTodo, isDone, setIsDone}) => {
                     }} />
                     <span 
                         style={{textDecoration: isDone ? 'line-through' : 'none'}}>
-                            <span className={"todo_priority"}>
-                                {todo.priority}
-                            </span>
+                        {todo.priority}
                         {todo.content}
                     </span>
                     <button 
@@ -38,11 +41,6 @@ const StyledItem = styled.div`
         li {
             margin-left: 35%;
             margin-top: 5px;
-            .todo_priority {
-                color: rgb(255, 80, 120);
-                margin-left: 5px;
-                margin-right:10px;
-            }
             button {
                 background-color: #fff;
                 color: rgb(80, 120, 255);
