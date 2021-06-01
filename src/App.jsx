@@ -10,10 +10,10 @@ const App = () => {
     const [todos, setTodos] = useState(
         // ""
         [
-            { id: shortid.generate(), content: "Prop8(Proof)", priority: "★★★" },
+            { id: shortid.generate(), content: "L2radProof", priority: "★★★" },
             { id: shortid.generate(), content: "資格の勉強", priority: "☆★★"},
-            { id: shortid.generate(), content: "とうらぶレベリング", priority: "☆★★"},
-            { id: shortid.generate(), content: "野球見る", priority: "★★★"}
+            { id: shortid.generate(), content: "ゼミ準備", priority: "☆★★"},
+            { id: shortid.generate(), content: "野球見る？", priority: "★★★"}
         ]
     );
 
